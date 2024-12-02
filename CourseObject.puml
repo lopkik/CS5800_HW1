@@ -1,0 +1,24 @@
+@startuml
+
+object "<u>Nima:Instructor</u>" as nima {
+    firstName = "Nima"
+    lastName = "Davarpanah"
+    officeNumber = "3-2636"
+}
+
+object "<u>Clean Code:Textbook</u>" as cc{
+    title = "Clean Code"
+    author = "Robert Cecil Martin"
+    publisher = "Pearson"
+}
+
+object "<u>CS5800:Course</u>" as course {
+    name = "CS5800"
+    instructor = Nima
+    textbook = Clean Code
+}
+
+course o-- nima
+course o-- cc
+
+@enduml

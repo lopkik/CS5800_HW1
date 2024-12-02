@@ -1,0 +1,56 @@
+@startuml
+abstract class Employee {
+    String firstName
+    String lastName
+    string ssn
+
+    Employee(String firstName, String lastName, String ssn)
+    void setFirstName(String firstName)
+    String getFirstName()
+    void setLastName(String lastName)
+    String getLastName()
+    void setSsn(String ssn)
+    String getSsn()
+}
+class SalariedEmployee {
+    double weeklySalary
+
+    SalariedEmployee(String firstName, String lastName, String ssn, double weeklySalary)
+    double getWeeklySalary()
+    void setWeeklySalary(double weeklySalary)
+}
+class HourlyEmployee {
+    double wage
+    int hoursWorked
+
+    HourlyEmployee(String firstName, String lastName, String ssn, double wage, int hoursWorked)
+    double getWage()
+    void setWage(double wage)
+    int getHoursWorked()
+    void setHoursWorked(int hoursWorked)
+}
+class CommissionEmployee {
+    double commissionRate
+    double grossSalary
+
+    CommissionEmployee(String firstName, String lastName, String ssn, double commissionRate, double grossSalary)
+    double getCommissionRate()
+    void setCommissionRate(double commissionRate)
+    double getGrossSalary()
+    void setGrossSalary(double grossSalary)
+}
+class BaseEmployee {
+    double baseSalary
+
+    BaseEmployee(String firstName, String lastName, String ssn, double baseSalary)
+    double getBaseSalary()
+    void setBaseSalary(double baseSalary)
+}
+
+Employee <|-up- SalariedEmployee
+Employee <|-up- HourlyEmployee
+Employee <|-down- CommissionEmployee
+Employee <|-down- BaseEmployee
+
+
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+
+object "<u>HMS:Ship</u>" as hms {
+    name = "HMS Classic"
+    buildYear = "1920"
+}
+object "<u>Party:CruiseShip</u>" as party {
+    name = "SS Caribbean Party"
+    buildYear = "2004"
+    passengerCapacity = 50000
+}
+object "<u>Tugboat:CargoShip</u>" as cargo {
+    name = "Tugboat"
+    buildYear = "1840"
+    cargoTonnageCapacity = 1
+}
+
+hms <|-- party
+hms <|-- cargo
+
+@enduml
